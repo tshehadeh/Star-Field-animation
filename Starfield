@@ -1,0 +1,34 @@
+Star[] stars = new Star[400];
+Supernova[] novas = new Supernova[200];
+Asteroid[] asteroid = new Asteroid[50];
+
+float speed;
+void setup(){
+  size(800,800);
+  for(int i =0;i<stars.length;i++){
+    stars[i] = new Star();
+  }
+  for(int i =0;i<novas.length;i++){
+    novas[i]=new Supernova();
+  }
+  for(int i =0;i<asteroid.length;i++){
+    asteroid[i]=new Asteroid();
+  }
+}
+void draw(){
+  speed=map(mouseX,0,width,0,25);
+  background(0);
+  translate(width/2,height/2);
+  for(int i =0;i<stars.length;i++){
+    stars[i].update();
+    stars[i].show();
+  }
+  for(int i =0;i<novas.length;i++){
+    novas[i].update();
+    novas[i].show();
+  }
+  for(int i =0;i<asteroid.length;i++){
+    asteroid[i].update();
+    asteroid[i].show();
+  }
+}
